@@ -15,3 +15,4 @@ The Movie DatabaseのAPIを利用した映画検索サイトです
 
 ## 備考
 お気に入り機能の実装には特に苦労しましたが、Firebase連携の理解が深まりました！  
+![スクリーンショット 2025-06-19 22 21 55](https://github.com/user-attachments/assets/f7a51a7c-4546-4b85-8b29-4191348f62d9)
