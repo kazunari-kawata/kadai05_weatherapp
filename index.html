@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./css/style.css" />
+        <title>The Movie DB</title>
+    </head>
+    <body>
+        <nav>
+            <div id="authButtons">
+                <button id="showFavoritesBtn" class="menu">お気に入り</button>
+                <button id="loginGoogle" class="menu">Googleでログイン</button>
+                <button id="loginAnon" class="menu">匿名でログイン</button>
+                <p id="userStatus">ログインしていません</p>
+            </div>
+        </nav>
+        <header>
+            <div class="site-name">
+                <h1>
+                    <a href="/"
+                        ><img
+                            src="./imgs/blue_square_2-d537fb228cf3ded904ef09b136fe3fec72548ebc1fea3fbbd1ad9e36364db38b.svg"
+                            alt=""
+                    /></a>
+                </h1>
+            </div>
+            <div id="search">
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="映画タイトルを検索"
+                />
+                <button id="searchBtn">検索</button>
+            </div>
+        </header>
+        <!-- 映画一覧表示 -->
+        <main id="app" class="movie-grid"></main>
+        <!-- 個別作品表示 -->
+        <section id="detailView" style="display: none">
+            <div class="page-left">
+                <img id="detailPoster" src="" alt="ポスター" />
+            </div>
+            <div class="page-right">
+                <h2 id="detailTitle"></h2>
+                <p id="releaseDate">
+                    <strong>公開日：</strong><span id="detailDate"></span>
+                </p>
+                <p id="detailOverview"></p>
+                <button id="backToList"><一覧に戻る></button>
+            </div>
+        </section>
+        <!-- お気に入り一覧 -->
+        <section id="favoritesSection" class="movie-grid" style="display: none">
+            <h2>お気に入り</h2>
+            <div id="favoriteMoviesContainer"></div>
+            <button id="backFromFavorites" class="menu">映画一覧に戻る</button>
+        </section>
+        <!-- ページネーション -->
+        <div class="pagenation">
+            <button id="previous">前のページ</button>
+            <button id="next">次のページ</button>
+        </div>
+        <footer>
+            <p>Powered by</p>
+            <img src="./imgs/TMDB_logo.svg" alt="logo" />
+        </footer>
+
+        <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script type="module" src="./js/script.js"></script>
+    </body>
+</html>
