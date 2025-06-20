@@ -71,7 +71,7 @@ nav {
     display: flex;
     margin: 3rem 0 1rem;
 }
-.site-name img{
+.site-name img {
     width: 100%;
 }
 /* 検索窓 */
@@ -130,16 +130,39 @@ nav {
     text-align: center;
 }
 /* お気に入り一覧 */
-#favoritesSection h2{
-    margin: 20px 0 0 20px;
-
-}
-#favoritesSection{
-    height: 100vh;
+#favoritesSection {
+    min-height: 100vh;
     width: 100vw;
+    padding: 20px;
+    box-sizing: border-box;
 }
-#backFromFavorites{
+.favorites-header {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 0 20px;
+}
+.favorites-header h2 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+    text-align: center; 
+    margin: 0;
+    font-size: 2em;
+}
+#backFromFavorites {
     color: white;
+    padding: 10px 15px;
+}
+.movie-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    padding: 0 20px;
 }
 /* 個別作品表示 */
 #detailView {

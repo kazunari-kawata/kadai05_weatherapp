@@ -1,4 +1,4 @@
-import { tmdbConfig } from "./tmdb-config.js";
+import { tmdbConfig } from "./tmdbConfig.js";
 import {
     auth,
     db,
@@ -21,7 +21,7 @@ let favoriteIds = new Set();
  * 映画リストを画面に描画する
  * @param {Array} movies TMDb API から取得した映画オブジェクトの配列
  */
-function renderMovies(movies) {
+function renderMovies(movies, targetElementID = "#app") {
     let elements = "";
 
     movies.forEach((m) => {
@@ -51,8 +51,7 @@ function renderMovies(movies) {
         </div>
       `;
     });
-
-    $("#app").html(elements);
+    $(targetElementID).html(elements);
 }
 
 // 映画表示
@@ -152,6 +151,7 @@ $("#app").on("click", ".movie-card", function (e) {
 $("#backToList").on("click", function () {
     $("#app").show();
     $("header").show();
+    $("nav").show();
     $(".pagenation").show();
     $("footer").show();
     $("#detailView").hide();
